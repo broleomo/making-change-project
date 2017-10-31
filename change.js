@@ -1,25 +1,45 @@
 // Making Change function
-
-
 function makeChange(value){
   let quarters = 0
   let dimes = 0
   let nickels = 0
   let pennies = 0
+  let count = 0
     for (let quarters = 0; quarters <= value/25; quarters++) {
       for (let dimes = 0; dimes <= (value - 25*quarters)/10; dimes++) {
         for (let nickels = 0; nickels <= (value - (25*quarters + 10*dimes))/5; nickels++) {
           let pennies = (value - (25*quarters + 10*dimes + 5*nickels))
+          count ++;
+        }
+      }
+  }
+  console.log(count);
+}
+makeChange(17)
+
+// Ways to Order function
+
+function WaysToOrder(value){
+  // if nuggets is divisible by 6
+  let twentyPack = 0
+  let ninePack = 0
+  let sixPack = 0
+  let count = 0
+  for(let twentyPack = 0; twentyPack <= value/20; twentyPack++){
+    for (let ninePack = 0; ninePack <= (value - 20*twentyPack)/9; ninePack++) {
+      for (let sixPack = 0; sixPack <= (value -(20*twentyPack + 9*ninePack))/6; sixPack++) {
+        count ++;
+        if (value % 20, 9, 6 !== 0){
+          return null;
         }
 
       }
-      console.log('quarters: ',quarters,' dimes: ',dimes, ' nickels: ', nickels, ' pennies: ', pennies);
     }
+  }
+    console.log(count);
+  }
 
-}
-
-
-
+WaysToOrder(18);
 
 
 
