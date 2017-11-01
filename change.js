@@ -36,13 +36,13 @@ function WaysToOrder(value){
       }
     }
   }
+
+    return
     return count;
     // console.log(count);
   }
 
 WaysToOrder(18);
-
-
 
 console.assert(WaysToOrder(5) === 0, "ways to order should be 0");
 console.assert(WaysToOrder(12) === 1, "ways to order should be 1");
@@ -50,7 +50,10 @@ console.assert(WaysToOrder(18) === 2, "ways to order should be 2");
 console.assert(WaysToOrder(30) === 2, "ways to order should be 2");
 console.assert(WaysToOrder(5) === 0, "ways to order should be 0");
 
-
+for (var n = 0; n < 100; n++) {
+  console.log(n);
+  console.log(WaysToOrder(n));
+}
 
 
 
