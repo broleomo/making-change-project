@@ -28,18 +28,27 @@ function WaysToOrder(value){
   for(let twentyPack = 0; twentyPack <= value/20; twentyPack++){
     for (let ninePack = 0; ninePack <= (value - 20*twentyPack)/9; ninePack++) {
       for (let sixPack = 0; sixPack <= (value -(20*twentyPack + 9*ninePack))/6; sixPack++) {
-        count ++;
-        if (value % 20, 9, 6 !== 0){
-          return null;
+        if (value - (twentyPack*20 + ninePack*9 + sixPack*6) == 0){
+          console.log('twentyPack:'+ twentyPack, 'ninePack:' + ninePack, 'sixPack:' + sixPack );
+          count ++;
         }
 
       }
     }
   }
-    console.log(count);
+    return count;
+    // console.log(count);
   }
 
 WaysToOrder(18);
+
+
+
+console.assert(WaysToOrder(5) === 0, "ways to order should be 0");
+console.assert(WaysToOrder(12) === 1, "ways to order should be 1");
+console.assert(WaysToOrder(18) === 2, "ways to order should be 2");
+console.assert(WaysToOrder(30) === 2, "ways to order should be 2");
+console.assert(WaysToOrder(5) === 0, "ways to order should be 0");
 
 
 
